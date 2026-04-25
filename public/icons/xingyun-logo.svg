@@ -1,0 +1,68 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e5c17a"/>
+      <stop offset="50%" style="stop-color:#d4a853"/>
+      <stop offset="100%" style="stop-color:#b8923f"/>
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf8f5"/>
+      <stop offset="100%" style="stop-color:#d4d4e4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Decorative Background Circle (Subtle) -->
+  <circle cx="40" cy="40" r="35" fill="none" stroke="url(#goldGradient)" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Star Symbol (星) -->
+  <g transform="translate(40, 40)">
+    <!-- Outer star points -->
+    <path d="M0,-20 L5,-8 L18,-8 L8,2 L12,15 L0,7 L-12,15 L-8,2 L-18,-8 L-5,-8 Z" 
+          fill="url(#goldGradient)" 
+          class="star-symbol"/>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="4" fill="#0a0a1a" stroke="url(#goldGradient)" stroke-width="1"/>
+  </g>
+
+  <!-- Chinese Text: 星運堂 -->
+  <text x="85" y="38" 
+        font-family="'Noto Serif TC', 'Songti SC', serif" 
+        font-size="32" 
+        font-weight="600" 
+        fill="url(#textGradient)">
+    星運堂
+  </text>
+
+  <!-- English Subtitle -->
+  <text x="87" y="58" 
+        font-family="'Cormorant Garamond', serif" 
+        font-size="14" 
+        font-weight="400" 
+        fill="url(#goldGradient)">
+    XingYun Tang
+  </text>
+
+  <!-- Decorative dots -->
+  <circle cx="82" cy="50" r="1.5" fill="#d4a853" opacity="0.6"/>
+  <circle cx="185" cy="50" r="1.5" fill="#d4a853" opacity="0.6"/>
+
+  <!-- Bottom tagline -->
+  <text x="100" y="75" 
+        font-family="'Noto Serif TC', serif" 
+        font-size="10" 
+        fill="#d4a853" 
+        opacity="0.8"
+        text-anchor="middle">
+    三術合一 · 指點迷津
+  </text>
+
+  <!-- Style for hover effect -->
+  <style>
+    .star-symbol {
+      transition: all 0.3s ease;
+    }
+    svg:hover .star-symbol {
+      filter: drop-shadow(0 0 8px rgba(212, 168, 83, 0.6));
+    }
+  </style>
+</svg>

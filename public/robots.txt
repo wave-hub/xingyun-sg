@@ -1,0 +1,22 @@
+# 星運堂 XingYun Tang - robots.txt
+# Singapore Website
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://xingyuntang.sg/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow admin/internal paths (if any)
+Disallow: /api/internal/
+Disallow: /admin/
+
+# Allow search engines to crawl all public content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

@@ -1,26 +1,352 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   星運堂 XingYun Tang - Brand Design Tokens
+   ============================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand Colors - 玄色系 */
+  --color-yin-black: #0a0a1a;
+  --color-yin-black-light: #12122a;
+  --color-yin-black-dark: #050510;
+
+  /* Brand Colors - 硃砂紅 */
+  --color-cinnabar-red: #c53d43;
+  --color-cinnabar-red-light: #d65a5f;
+  --color-cinnabar-red-dark: #a82d32;
+
+  /* Brand Colors - 金色 */
+  --color-gold: #d4a853;
+  --color-gold-light: #e5c17a;
+  --color-gold-dark: #b8923f;
+
+  /* Brand Colors - 象牙白 */
+  --color-ivory: #faf8f5;
+  --color-ivory-light: #fdfcfb;
+  --color-ivory-dark: #f0ece6;
+
+  /* Neutral Colors */
+  --color-neutral-900: #1a1a2e;
+  --color-neutral-800: #2d2d44;
+  --color-neutral-700: #404060;
+  --color-neutral-600: #5a5a7a;
+  --color-neutral-400: #9999bb;
+  --color-neutral-200: #d4d4e4;
+  --color-neutral-100: #e8e8f0;
+  --color-neutral-50: #f4f4f8;
+
+  /* Semantic Colors */
+  --color-primary: var(--color-cinnabar-red);
+  --color-secondary: var(--color-gold);
+  --color-accent: var(--color-gold);
+
+  /* Typography */
+  --font-serif-tc: "Noto Serif TC", "Songti SC", serif;
+  --font-sans-tc: "Noto Sans TC", "PingFang SC", sans-serif;
+  --font-english: "Cormorant Garamond", "Inter", serif;
+  --font-body: var(--font-sans-tc);
+
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-gold: 0 0 20px rgba(212, 168, 83, 0.3);
+
+  /* Animations */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+
+  --animate-fade-in: fade-in 0.5s var(--ease-out-expo) forwards;
+  --animate-slide-up: slide-up 0.6s var(--ease-out-expo) forwards;
+  --animate-slide-down: slide-down 0.6s var(--ease-out-expo) forwards;
+  --animate-scale-in: scale-in 0.4s var(--ease-out-expo) forwards;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-float: float 3s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Google Fonts Import
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   Base Styles
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-yin-black);
+  color: var(--color-ivory);
+  min-height: 100vh;
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-yin-black-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-dark) var(--color-yin-black-dark);
+}
+
+/* ============================================
+   Text Selection
+   ============================================ */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-yin-black);
+}
+
+::-moz-selection {
+  background-color: var(--color-gold);
+  color: var(--color-yin-black);
+}
+
+/* ============================================
+   Focus Styles
+   ============================================ */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Keyframe Animations
+   ============================================ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(212, 168, 83, 0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(212, 168, 83, 0.5);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   Taoist Decorative Elements
+   ============================================ */
+.taoist-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.taoist-divider::before,
+.taoist-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold-dark),
+    var(--color-gold),
+    var(--color-gold-dark),
+    transparent
+  );
+}
+
+.taoist-divider-symbol {
+  margin: 0 1rem;
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Eight Trigrams Pattern (八卦图案) */
+.bagua-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23d4a853' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23d4a853' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Golden Glow Effect */
+.golden-glow {
+  box-shadow: var(--shadow-gold);
+}
+
+.golden-glow-text {
+  text-shadow: 0 0 10px rgba(212, 168, 83, 0.5);
+}
+
+/* Gradient Text */
+.gradient-text-gold {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cinnabar {
+  background: linear-gradient(135deg, var(--color-cinnabar-red-light), var(--color-cinnabar-red), var(--color-cinnabar-red-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.container-brand {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-brand {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-brand {
+    padding: 0 2rem;
+  }
+}
+
+/* Card Glass Effect */
+.glass-card {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 168, 83, 0.1);
+}
+
+/* Noise Texture Overlay */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* ============================================
+   Typography Utilities
+   ============================================ */
+.font-serif-tc {
+  font-family: var(--font-serif-tc);
+}
+
+.font-sans-tc {
+  font-family: var(--font-sans-tc);
+}
+
+.font-english {
+  font-family: var(--font-english);
+}
+
+/* Chinese Character Spacing */
+.text-chinese {
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   Animation Utilities
+   ============================================ */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
 }
