@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "npx tsx scripts/generate-sitemap.ts ./public/sitemap.xml",
     "start": "next start",
     "lint": "eslint"
   },
