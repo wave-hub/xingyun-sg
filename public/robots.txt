@@ -1,0 +1,8 @@
+# 星運堂 XingYun Tang - robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://xingyun-sg.vercel.app/sitemap.xml
