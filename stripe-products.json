@@ -1,0 +1,41 @@
+{
+  "products": {
+    "ziwei_doushu": {
+      "product_id": "prod_UPYeh0kwTWlxjk",
+      "product_name": "紫微斗數命盤分析",
+      "price_id": "price_1TQjXKE4BEWvvUvJVmDvNv7f",
+      "price_sgd": "S$88.00"
+    },
+    "bazi_mingli": {
+      "product_id": "prod_UPYe5LzBnVXD2o",
+      "product_name": "八字命理分析",
+      "price_id": "price_1TQjXLE4BEWvvUvJlaam2Jcz",
+      "price_sgd": "S$88.00"
+    },
+    "daliuren_zhanbu": {
+      "product_id": "prod_UPYeWyhnwkGdGo",
+      "product_name": "大六壬占卜",
+      "price_id": "price_1TQjXNE4BEWvvUvJSx7JLFdT",
+      "price_sgd": "S$88.00"
+    },
+    "san_shu_he_can": {
+      "product_id": "prod_UPYeVmKUiCNZYP",
+      "product_name": "三術合參",
+      "price_id": "price_1TQjXOE4BEWvvUvJjt1m1tHP",
+      "price_sgd": "S$188.00"
+    },
+    "mingli_zuizong": {
+      "product_id": "prod_UPYeENZM0BO9BK",
+      "product_name": "命理追蹤諮詢",
+      "price_id": "price_1TQjXPE4BEWvvUvJULQhM6of",
+      "price_sgd": "S$58.00"
+    }
+  },
+  "env_variables": {
+    "STRIPE_PRICE_ZIWEI_DOUSHU": "price_1TQjXKE4BEWvvUvJVmDvNv7f",
+    "STRIPE_PRICE_BAZI_MINGLI": "price_1TQjXLE4BEWvvUvJlaam2Jcz",
+    "STRIPE_PRICE_DALIUREN_ZHANBU": "price_1TQjXNE4BEWvvUvJSx7JLFdT",
+    "STRIPE_PRICE_SAN_SHU_HE_CAN": "price_1TQjXOE4BEWvvUvJjt1m1tHP",
+    "STRIPE_PRICE_MINGLI_ZUIZONG": "price_1TQjXPE4BEWvvUvJULQhM6of"
+  }
+}
