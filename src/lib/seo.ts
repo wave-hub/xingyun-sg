@@ -9,7 +9,7 @@ export const siteConfig = {
     zh: "三術合一命理文化平台，提供紫微斗數、八字命理、大六壬三大術數預測服務。新加坡專業命理諮詢。",
     en: "Singapore's premier metaphysical platform offering Zi Wei Dou Shu, Ba Zi, and Da Liu Ren consultations. Ancient Wisdom, Illuminated.",
   },
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://xingyuntang.sg",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://xingyun-sg.vercel.app",
   locale: "zh_SG",
   alternateLocale: "en_SG",
   address: {

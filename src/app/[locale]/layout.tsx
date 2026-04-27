@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { notoSerifTC, notoSansTC, cormorantGaramond, inter } from "@/lib/fonts";
 import { Navbar } from "@/components/layout";
+import { SEOProvider } from "@/components/SEOProvider";
 import "../../app/globals.css";
 
 export const metadata: Metadata = {
@@ -69,6 +70,7 @@ export default async function LocaleLayout({
     >
       <body className="min-h-screen flex flex-col bg-yin-black text-ivory antialiased">
         <NextIntlClientProvider messages={messages}>
+          <SEOProvider />
           <Navbar />
           <main className="flex-1 pt-16">
             {children}

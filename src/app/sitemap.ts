@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://xingyuntang.sg";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://xingyun-sg.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const { locales } = routing;
